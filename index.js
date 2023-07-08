@@ -4,7 +4,6 @@ import "dotenv/config";
 import puppeteer from "puppeteer";
 const browser = await puppeteer.launch({ headless: true });
 const page = await browser.newPage();
-await page.setGeolocation({ latitude: 39.923054, longitude: 130.451673 });
 async function getWeather(location, res) {
    await page.goto(`https://www.google.com/search?q=${location}+weather&hl=en`);
    try {
